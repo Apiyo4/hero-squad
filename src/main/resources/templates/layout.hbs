@@ -7,25 +7,19 @@
 </head>
 <body>
 <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Home</a></li>
-    <li role="presentation"><a href="/posts">See All Posts</a></li>
-    <li role="presentation"><a href="/posts/new">Add a New Post</a></li>
+    <li role="presentation" class="active"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/heroes-detail">See All Heroes</a></li>
+    <li role="presentation"><a href="/heroes/new">Add a New Post</a></li>
 </ul>
 <div class="container">
-    <!--begin main template-->
-    <div class="page-header">
-        <img src="/images/caspar-rubin-224229.jpg" width="70%">
-        <h1>Welcome to Hero Squad Blog. <small>A journey into code!</small></h1>
-    </div>
-
-    <div class="col-md-12">
+    <div class="col-md-8 offset-md-2">
         {{#block "content"}}
         {{/block}}
 
     </div>
 </div>
-<!--end main template-->
+
 {{#block "footer"}}
     </body>
     </html>
-{{/block}
+{{/block}}
