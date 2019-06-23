@@ -20,44 +20,44 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_InstantiatesCorrectly() {
+    public void newHero_InstantiatesCorrectly() throws Exception{
         Hero hero = new Hero("Flash", 28, "fast", "dies");
         assertEquals(true, hero instanceof Hero);
     }
 
     @Test
-    public void newHero_getsName_Flash() {
+    public void newHero_getsName_Flash() throws Exception{
         Hero hero = setupNewHero();
         assertEquals("Flash", hero.getName());
     }
 
     @Test
-    public void newHero_getsAge_28() {
+    public void newHero_getsAge_28() throws Exception{
         Hero hero = setupNewHero();
         assertEquals(28, hero.getAge());
     }
 
     @Test
-    public void newHero_getSpecialPower_fast() {
+    public void newHero_getSpecialPower_fast() throws Exception{
         Hero hero = setupNewHero();
         assertEquals("fast", hero.getSpecialPower());
     }
 
     @Test
-    public void newHero_getWeakness_dies() {
+    public void newHero_getWeakness_dies() throws Exception{
         Hero hero = setupNewHero();
         assertEquals("dies", hero.getWeakness());
     }
 
     @Test
-    public void newHero_getId_1() {
+    public void newHero_getId_1() throws Exception{
         Hero.clear();
         Hero hero = setupNewHero();
         assertEquals(1, hero.getId());
     }
 
     @Test
-    public void newHero_returnsAllInstancesOfHeroes() {
+    public void newHero_returnsAllInstancesOfHeroes() throws Exception{
         Hero hero = setupNewHero();
         Hero otherHero = new Hero("Moose", 31, "weapons", "cake");
         assertEquals(true, Hero.getAll().contains(hero));
@@ -71,7 +71,7 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_findsReturnCorrectHeroWhenMoreHeroesExists() {
+    public void newHero_findsReturnCorrectHeroWhenMoreHeroesExists() throws Exception{
         Hero hero = setupNewHero();
         Hero otherHero =  new Hero("Moose", 31, "weapons", "cake");
         assertEquals(2, Hero.findById(otherHero.getId()).getId());

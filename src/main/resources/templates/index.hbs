@@ -11,9 +11,9 @@
             <h1 class="text.center">Hero list!</h1>
 
             {{#if heroes}}
-                {{#each hero }}
+                {{#each heroes }}
                     <p>Current Name:</p>
-                    <p>{{ content }} <a href="/heroes/{{id}}">read more...</a></p>
+                    <p>{{ name }} <a href="/heroes/{{id}}">read more...</a></p>
                 {{/each}}
             {{else}}
                 <p>No heroes!</p>
