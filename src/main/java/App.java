@@ -44,7 +44,33 @@ public class App {
             model.put("squads", squads);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-
-
+        get("/heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "heroes-form.hbs");
+        }, new HandlebarsTemplateEngine());
+        post("/heroes/list", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            request.session().attribute("name", name);
+            model.put("name", name);
+            int age = Integer.parseInt(request.queryParams("age"));
+            request.session().attribute("age", age);
+            model.put("age", age);
+            String specialPower = request.queryParams("specialPower");
+            request.session().attribute("specialPower", specialPower);
+            model.put("specialPower", specialPower);
+            String weakness = request.queryParams("weakness");
+            request.session().attribute("weakness", weakness);
+            model.put("weakness", weakness);
+            Hero heroes = new Hero( name, age, specialPower, weakness);
+            model.put("heroes", heroes);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/heroes/list", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Hero> heroes = Hero.getAll();
+            model.put("heroes", heroes);
+            return new ModelAndView(model, "hero-detail.hbs");
+        }, new HandlebarsTemplateEngine());
     }
     }

@@ -8,18 +8,16 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <h1 class="text.center">Squad list!</h1>
-
-            {{#if squads}}
+                {{#if squads}}
                 {{#each squads }}
-                    <h3>Squad name: {{ name }}</h3>
-                    <p> Maximum size: {{max_size}}</p>
-                    <p>Cause: {{cause}} <a href="/squads/1">read more...</a></p>
-                    <p></p>
-                    <p></p>
-                {{/each}}
-            {{else}}
-                <p>No squad</p>
-            {{/if}}
+                 <h3>Squad name: {{ name }}</h3>
+                 <p> Maximum size: {{max_size}}</p>
+                 <p>Cause: {{cause}} </p>
+                 <p><a href="/heroes/new">To add a hero...</a></p>
+                 {{/each}}
+                 {{else}}
+                 <p>No squad</p>
+                 {{/if}}
         </div>
     </div>
 {{/partial}}
