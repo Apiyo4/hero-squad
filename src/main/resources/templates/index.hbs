@@ -11,10 +11,9 @@
 
             {{#if squads}}
                 {{#each squads }}
-                    <h3>Current Name:</h3>
-                    <h3>{{ name }}</h3>
-                    <p>{{max_size}}</p>
-                    <p>{{cause}} <a href="/squads/{{id}}">read more...</a></p>
+                    <h3>Squad name: {{ name }}</h3>
+                    <p> Maximum size: {{max_size}}</p>
+                    <p>Cause: {{cause}} <a href="/squads/1">read more...</a></p>
                     <p></p>
                     <p></p>
                 {{/each}}

@@ -19,8 +19,14 @@ public class App {
         post("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
+            request.session().attribute("name", name);
+            model.put("name", name);
             int max_size = Integer.parseInt(request.queryParams("max_size"));
+            request.session().attribute("max_size", max_size);
+            model.put("max_size", max_size);
             String cause = request.queryParams("cause");
+            request.session().attribute("cause", cause);
+            model.put("cause", cause);
             Squad squad = new Squad(max_size, name, cause);
             model.put("squad", squad);
             return new ModelAndView(model, "success.hbs");
