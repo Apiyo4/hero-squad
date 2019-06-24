@@ -1,0 +1,27 @@
+{{#partial "content"}}
+    <div class="page-header">
+        <h1>Welcome to Hero Squad.</h1>
+        <p>To add your squad:
+            <a href="/squads/new"> click here</a>
+        </p>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1 class="text.center">Hero list!</h1>
+
+            {{#if squads}}
+                {{#each squads }}
+                    <h3>Current Name:</h3>
+                    <h3>{{ name }}</h3>
+                    <p>{{max_size}}</p>
+                    <p>{{cause}} <a href="/squads/{{id}}">read more...</a></p>
+                    <p></p>
+                    <p></p>
+                {{/each}}
+            {{else}}
+                <p>No heroes!</p>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}
