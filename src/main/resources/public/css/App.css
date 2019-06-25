@@ -1,8 +1,8 @@
 body{
-  background-image: url("/images/batman.jpg");
+  background-image: url("/images/back.jpg");
   background-repeat: no-repeat;
   background-size:cover;
-  background-position: center;
+  background-position: 400px 30%;
   color: black;
   font-size: 18px;
 

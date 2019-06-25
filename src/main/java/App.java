@@ -19,22 +19,18 @@ public class App {
         post("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            request.session().attribute("name", name);
-            model.put("name", name);
             int max_size = Integer.parseInt(request.queryParams("max_size"));
-            request.session().attribute("max_size", max_size);
-            model.put("max_size", max_size);
             String cause = request.queryParams("cause");
-            request.session().attribute("cause", cause);
-            model.put("cause", cause);
-            Squad squad = new Squad(max_size, name, cause);
-            model.put("squad", squad);
+            Squad squads = new Squad(max_size, name, cause);
+            request.session().attribute("squads", squads);
+            model.put("squads", squads);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Squad> squads = Squad.getAll();
+            request.session().attribute("squads", squads);
             model.put("squads", squads);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
@@ -51,24 +47,18 @@ public class App {
         post("/heroes/list", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            request.session().attribute("name", name);
-            model.put("name", name);
             int age = Integer.parseInt(request.queryParams("age"));
-            request.session().attribute("age", age);
-            model.put("age", age);
             String specialPower = request.queryParams("specialPower");
-            request.session().attribute("specialPower", specialPower);
-            model.put("specialPower", specialPower);
             String weakness = request.queryParams("weakness");
-            request.session().attribute("weakness", weakness);
-            model.put("weakness", weakness);
             Hero heroes = new Hero( name, age, specialPower, weakness);
+            request.session().attribute("heroes", heroes);
             model.put("heroes", heroes);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
         get("/heroes/list", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> heroes = Hero.getAll();
+            request.session().attribute("heroes", heroes);
             model.put("heroes", heroes);
             return new ModelAndView(model, "hero-detail.hbs");
         }, new HandlebarsTemplateEngine());
