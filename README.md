@@ -5,13 +5,13 @@ This is an application that enables a user to add a Squad and in the squad add a
 ## Setup/Installation Requirements
 Dowload the zipped file or clone to your local machine.To go to delpolyed site click the link above.
 ## Behavior driven development
-|Behavior|Input|Output|
-|:-------|:-----|:------|
-|Click deployed link| |landing page |
-|Click here to add squad | | Form appears |
-|Click submit | Returns to home page|Squad details appear |
-|Click add hero| | Form appears|
-|To see hero| Click see all heros|Alist of all heros appear|
+|Input|Output|
+|:-------|:------|
+|Click deployed link|landing page |
+|Click here to add squad| Form appears |
+|Click submit | Returns to home page and squad details appear |
+|Click add hero| Form appears|
+|To see hero, click see all heros|Alist of all heros appear|
 ## Known Bugs
 CSS for other templates not working.
 ## Technologies Used
