@@ -5,7 +5,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 mainClassName = 'App'
-
+applicationName = "apiyo-hero-squad"
 sourceCompatibility = 1.8
 
 repositories {
@@ -18,3 +18,5 @@ dependencies {
     compile "com.sparkjava:spark-template-handlebars:2.5.5" //we'll need this for later!
     compile 'org.slf4j:slf4j-simple:1.7.21' //to ensure easy to read logging.
 }
+defaultTasks= ['clean']
+task stage(dependsOn:['clean', 'installDist'])
