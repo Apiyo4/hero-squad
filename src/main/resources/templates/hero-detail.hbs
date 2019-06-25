@@ -1,16 +1,22 @@
 {{#partial "content"}}
+
+    <div class=" marginTop">
     <div class="panel panel-default">
-     <div class="panel-body">
-         <h1>Hero's List</h1>
-         {{#if heroes}}
-         {{#each heroes}}
-            <p>Hero's name: {{name}} </p>
-            <p>Age: {{age}}</p>
-            <p>Special Power: {{specialPower}}</p>
-            <p>Weakness: {{weakness}}</p>
-        {{/each}}
-        {{/if}}
-     </div>
+        <div class="panel-body">
+            <h1>Hero's List</h1>
+            {{#if heroes}}
+                {{#each heroes}}
+                    <p>Hero's name: {{name}} </p>
+                    <p>Age: {{age}}</p>
+                    <p>Special Power: {{specialPower}}</p>
+                    <p>Weakness: {{weakness}}</p>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+    <h5><a href="/">Go To Home</a></h5>
     </div>
 {{/partial}}
-{{> layout}}
+{{> layout.hbs}}
+
+
