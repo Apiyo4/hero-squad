@@ -1,0 +1,20 @@
+{{#partial "content"}}
+    <div class=" marginTop">
+    <div class="panel panel-default">
+        <div class="panel-body">
+         {{#each squads}}
+         <h1>Name: {{name}}</h1>
+            <ul class="list-unstyled">
+              <li> {{ cause }}</li>
+             <li> {{ max_size}}</li>
+            </ul>
+        {{/each}}
+
+    <a href="/heroes/new" class="card-link">Add New Hero</a>
+    <a href="/">Back to home page</a>
+        </div>
+    </div>
+    </div>
+    {{/partial}}
+
+    {{> layout}}
